@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Plugin</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 10px;
+            width: 220px;
+        }
+        h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .info {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .slider-container {
+            margin-bottom: 15px;
+        }
+        .slider-label {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Current Track</h2>
+    <div class="info">
+        <strong>Artist:</strong> <span id="artist">Unknown</span><br>
+        <strong>Track:</strong> <span id="track">Unknown</span><br>
+        <strong>Source:</strong> <span id="source">Unknown</span>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>

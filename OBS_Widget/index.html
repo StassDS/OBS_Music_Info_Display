@@ -78,15 +78,23 @@
         }
 
         // Обновляем данные на странице
-        document.getElementById('track').textContent = data.track || 'Неизвестный трек'; 
-        document.getElementById('artist').textContent = `${data.artist || 'Неизвестный исполнитель'}`; 
+        document.getElementById('track').textContent = data.track || 'Включите музыку'; 
+        document.getElementById('artist').textContent = `${data.artist || 'Или проверьте работает ли плагин'}`; 
 
         // Устанавливаем иконку сервиса в зависимости от источника
         const serviceIcon = document.getElementById('service-icon');
         if (data.source === 'YouTube Music') {
-          serviceIcon.src = 'ico\\Youtube_Music.png'; // Иконка YouTube Music
+          serviceIcon.src = 'ico\\Youtube_Music.png';
         } else if (data.source === 'Nightwave Plaza') {
-          serviceIcon.src = 'ico\\plaza.png'; // Иконка Nightwave Plaza
+          serviceIcon.src = 'ico\\plaza.png';
+        } else if (data.source === 'SoundCloud') {
+          serviceIcon.src = 'ico\\SoundCloud.png';
+        } else if (data.source === 'music.yandex.ru') {
+          serviceIcon.src = 'ico\\yandex_music.png';
+        } else if (data.source === 'vk.com/music') {
+          serviceIcon.src = 'ico\\vk_music.png';
+        } else if (data.source === 'Spotify') {
+          serviceIcon.src = 'ico\\spotify.png';
         } else {
           serviceIcon.src = 'ico\\Loading.gif'; // Иконка по умолчанию или убираем
         }

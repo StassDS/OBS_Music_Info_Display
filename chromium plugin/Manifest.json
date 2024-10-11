@@ -1,19 +1,26 @@
 {
-    "manifest_version": 3,
-    "name": "Music Track Parser",
-    "version": "1.0",
-    "permissions": ["tabs", "activeTab", "scripting"],
-    "background": {
-      "service_worker": "background.js"
-    },
-    "content_scripts": [
-      {
-        "matches": ["https://music.youtube.com/*", "https://plaza.one/*"],
-        "js": ["content.js"]
-      }
-    ],
-    "host_permissions": [
-      "http://localhost:5000/*"
-    ]
-  }
-  
+  "manifest_version": 3,
+  "name": "Music Track Parser",
+  "version": "1.2",
+  "permissions": ["tabs", "activeTab", "scripting"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "ico/icon16.png",
+      "48": "ico/icon48.png",
+      "128": "ico/icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://music.youtube.com/*", "https://plaza.one/*", "https://soundcloud.com/*", "https://music.yandex.ru/*", "https://vk.com/music/*", "https://open.spotify.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "host_permissions": [
+    "http://localhost:5000/*"
+  ]
+}
