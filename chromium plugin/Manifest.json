@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Music Track Parser",
-  "version": "1.2",
+  "version": "1.3",
   "permissions": ["tabs", "activeTab", "scripting"],
   "background": {
     "service_worker": "background.js"
@@ -16,7 +16,7 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://music.youtube.com/*", "https://plaza.one/*", "https://soundcloud.com/*", "https://music.yandex.ru/*", "https://vk.com/music/*", "https://open.spotify.com/*"],
+      "matches": ["https://music.youtube.com/*", "https://plaza.one/*", "https://soundcloud.com/*", "https://music.yandex.ru/*", "https://vk.com/*", "https://open.spotify.com/*"],
       "js": ["content.js"]
     }
   ],
