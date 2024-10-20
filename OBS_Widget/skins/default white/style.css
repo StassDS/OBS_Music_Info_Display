@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff00;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .player {
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    border-radius: 20px;
+    display: flex; 
+    align-items: center; 
+    width: 800px; 
+    height: 100px; 
+    margin: 0 auto; 
+  }
+  
+  #cover {
+    width: 80px; 
+    height: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-right: 20px; 
+    
+  }
+  
+  .info {
+    flex-grow: 1; 
+    text-align: center; 
+    color: rgb(0, 0, 0);
+  }
+  
+  #track {
+    font-size: 24px; 
+    font-weight: bold; 
+    margin: 0; 
+  }
+  
+  #service-icon {
+    width: 80px; 
+    height: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-right: 20px; 
+    margin-left: 15px;
+  }
+  
+  audio {
+    width: 100%; 
+    outline: none;
+    margin-top: 10px; 
+  }
+  

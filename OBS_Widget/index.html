@@ -4,55 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Custom Nightwave Plaza Player</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #00808000;
-      color: #fff;
-      text-align: center;
-      padding: 20px;
-    }
-    .player {
-      background-color: rgb(0, 0, 0);
-      padding: 10px;
-      border-radius: 20px;
-      display: flex; 
-      align-items: center; 
-      width: 800px; 
-      height: 100px; 
-      margin: 0 auto; 
-    }
-    #cover {
-      width: 80px; 
-      height: 80px;
-      object-fit: cover;
-      border-radius: 10px;
-      margin-right: 20px; 
-    }
-    .info {
-      flex-grow: 1; 
-      text-align: center; 
-    }
-    #track {
-      font-size: 24px; 
-      font-weight: bold; 
-      margin: 0; 
-    }
-    #service-icon {
-      width: 80px; 
-      height: 80px;
-      object-fit: cover;
-      border-radius: 10px;
-      margin-right: 20px; 
-      margin-left: 15px; /* Отступ слева для сдвига элемента вправо */
-  }
-  
-    audio {
-      width: 100%; 
-      outline: none;
-      margin-top: 10px; 
-    }
-  </style>
+  <link id="skin-stylesheet" rel="stylesheet" href="skins/default/style.css"> <!-- Подключаем CSS файл -->
 </head>
 <body>
 
@@ -81,22 +33,30 @@
         document.getElementById('track').textContent = data.track || 'Включите музыку'; 
         document.getElementById('artist').textContent = `${data.artist || 'Или проверьте работает ли плагин'}`; 
 
+        // Динамически обновляем стиль в зависимости от переменной 'style'
+        const styleName = data.style || 'default';  // Используем 'default', если нет 'style' в ответе
+        const skinStylesheet = document.getElementById('skin-stylesheet');
+        skinStylesheet.href = `skins/${styleName}/style.css`; // Обновляем путь к CSS файлу
+
+        // Путь к иконкам
+        const iconPath = `skins/${styleName}/ico`;
+
         // Устанавливаем иконку сервиса в зависимости от источника
         const serviceIcon = document.getElementById('service-icon');
         if (data.source === 'YouTube Music') {
-          serviceIcon.src = 'ico\\Youtube_Music.png';
+          serviceIcon.src = `${iconPath}/Youtube_Music.png`;
         } else if (data.source === 'Nightwave Plaza') {
-          serviceIcon.src = 'ico\\plaza.png';
+          serviceIcon.src = `${iconPath}/plaza.png`;
         } else if (data.source === 'SoundCloud') {
-          serviceIcon.src = 'ico\\SoundCloud.png';
+          serviceIcon.src = `${iconPath}/SoundCloud.png`;
         } else if (data.source === 'Yandex Music') {
-          serviceIcon.src = 'ico\\yandex_music.png';
+          serviceIcon.src = `${iconPath}/yandex_music.png`;
         } else if (data.source === 'VK Music') {
-          serviceIcon.src = 'ico\\vk_music.png';
+          serviceIcon.src = `${iconPath}/vk_music.png`;
         } else if (data.source === 'Spotify') {
-          serviceIcon.src = 'ico\\spotify.png';
+          serviceIcon.src = `${iconPath}/spotify.png`;
         } else {
-          serviceIcon.src = 'ico\\Loading.gif'; // Иконка по умолчанию или убираем
+          serviceIcon.src = `${iconPath}/Loading.gif`; // Иконка по умолчанию или убираем
         }
 
       } catch (error) {

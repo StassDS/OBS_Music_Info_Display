@@ -20,11 +20,8 @@
             border: 1px solid #ccc;
             border-radius: 5px;
         }
-        .slider-container {
+        .style {
             margin-bottom: 15px;
-        }
-        .slider-label {
-            margin-top: 10px;
         }
     </style>
 </head>
@@ -36,6 +33,12 @@
         <strong>Source:</strong> <span id="source">Unknown</span>
     </div>
 
+    <div class="style">
+        <label for="style-select">Скин виджета:</label>
+        <select id="style-select"></select> <!-- Выпадающий список для стилей -->
+        
+        <button id="refresh">Применить скин</button>
+    </div>
     <script src="popup.js"></script>
 </body>
 </html>
