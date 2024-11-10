@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Music Plugin</title>
+    
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -15,30 +16,44 @@
             margin-bottom: 10px;
         }
         .info {
-            margin-bottom: 15px;
+            margin-bottom: -5px;
             padding: 10px;
-            border: 1px solid #ccc;
+            border: 5px solid #ccc;
             border-radius: 5px;
         }
         .style {
             margin-bottom: 15px;
+            padding: 10px;
+            border: 5px solid #ccc;
         }
+        select#style-select {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 5px;
+
+            width: 150px;
+            height: 20px; 
+            font-size: 16px;
+        }
+
     </style>
+
 </head>
 <body>
-    <h2>Current Track</h2>
     <div class="info">
-        <strong>Artist:</strong> <span id="artist">Unknown</span><br>
-        <strong>Track:</strong> <span id="track">Unknown</span><br>
-        <strong>Source:</strong> <span id="source">Unknown</span>
+        <h2>Сейчас играет</h2>
+        <strong>Автор:</strong> <span id="artist">Unknown</span><br>
+        <strong>Название:</strong> <span id="track">Unknown</span><br>
+        <strong>Источник:</strong> <span id="source">Unknown</span>
     </div>
 
     <div class="style">
-        <label for="style-select">Скин виджета:</label>
-        <select id="style-select"></select> <!-- Выпадающий список для стилей -->
-        
+        <h2>Выбрать скин</h2>
+        <select id="style-select"></select>
         <button id="refresh">Применить скин</button>
     </div>
     <script src="popup.js"></script>
+
 </body>
 </html>
