@@ -8,33 +8,41 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            padding: 10px;
-            width: 220px;
+            background-color: #000000;
+            padding: 0px;
+            width: 260px;
         }
         h2 {
             font-size: 18px;
             margin-bottom: 10px;
+            margin-top: 0;
+            color: #fff;
         }
         .info {
             margin-bottom: -5px;
             padding: 10px;
             border: 5px solid #ccc;
             border-radius: 5px;
+            color: #fff;
+            text-align: center;
+
         }
         .style {
             margin-bottom: 15px;
             padding: 10px;
             border: 5px solid #ccc;
+            border-radius: 5px;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            text-align: center;
+
         }
         select#style-select {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            margin-bottom: 5px;
-
             width: 150px;
-            height: 20px; 
+            height: 20px;
             font-size: 16px;
+            margin: 0 auto 5px auto;
+            display: block; 
         }
 
     </style>
@@ -50,7 +58,7 @@
 
     <div class="style">
         <h2>Выбрать скин</h2>
-        <select id="style-select"></select>
+        <select id="style-select"> </select>
         <button id="refresh">Применить скин</button>
     </div>
     <script src="popup.js"></script>
